@@ -5,7 +5,7 @@ import {authenticateToken, authorizeCoder, authorizeCompanyOrCoder} from '../Mid
 const router = Router();
 
 router.get('/', authenticateToken, authorizeCompanyOrCoder, coderController.getCoders);
-router.get('/:id', authenticateToken, authorizeCoder, coderController.getCoder);
+router.get('/:id', authenticateToken, authorizeCompanyOrCoder, coderController.getCoder);
 router.post('/', authenticateToken, authorizeCoder, coderController.createCoder);
 router.put('/:id', authenticateToken, authorizeCoder, coderController.updateCoder);
 router.delete('/:id', authenticateToken, authorizeCoder, coderController.deleteCoder);
