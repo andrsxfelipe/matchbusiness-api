@@ -17,7 +17,6 @@ export const login = async (req, res) => {
             return res.status(401).json({ message: "Contraseña incorrecta" });
         }
 
-        // Mapear rol si viene en números
         const role = user.id_role === 1 ? 'coder' : 'company';
 
         const token = jwt.sign(
